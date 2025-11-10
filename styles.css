@@ -1,0 +1,12 @@
+div {
+  background-size: cover;
+  /* background-color: black; */
+}
+
+img {
+  border-radius: 5%;
+}
+
+#gameOver {
+  display: none;
+}
