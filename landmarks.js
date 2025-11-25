@@ -194,6 +194,8 @@ export const ASIAN_CITIES = [
 
 
 //VALUE FOR EACH IMG START
+/*All images have been given a value which will have to go inside the fuctions on (utils.js).
+The number of continent/country/city is the corresponding index of their position in the array */
 const images={
   "photos/agra.avif":{
     continent: 3,
