@@ -12,19 +12,19 @@ function shuffleArray(arr) {
 
 //MIXING POSSIBLE ANSWERS START --TIP BY THE TA *WE CAN USE ^SET^ COLLECTION FOR THE WHILE and IF PART OF THE CODE--
 //console.log(optionsContinent(2)); //Forced CORRECT answer (TESTING!!)
-function optionsContinent(num){ //Parameter is the correct answer which later has to be shuffled (on a new function)
-  let listContinents = ["North America", "South America", "Europe", "Asia", "Australia", "Antartica"] //List of all the continents
+function optionsContinent(num1){ //Parameter is the correct answer which later has to be shuffled (on a new function)
+  let listContinents = ["North America", "South America", "Europe", "Asia", "Australia", "Antartica","Africa"] //List of all the continents
   let chosenContinents = [] //Array that weill contain the 3 random continents + the correct continent
   let indexChosen = [];  //Array that will contain the numerical value of all the continents in *ChosenContinents* (also makes sure that number are not repited.)
   chosenContinents.push(listContinents[num]) //Stores the new continent in the first place of the 4-slot Array.
   indexChosen.push(num) //Stores the numerical value of the CORRECT continent into the first slot of the Array.
   for (i=0;i<3;i++){ //Gives us 3 random continents to put in the answer buttons
-    let randomIndex = Math.floor(Math.random()*6); //Chooses a random number from 0 to 6 (including 6).
+    let randomIndex = Math.floor(Math.random()*7); //Chooses a random number from 0 to 6 (including 6).
       //If the number got from the random index is already been used before we have to change it.
       if (randomIndex == indexChosen[0] || randomIndex == indexChosen[1] || randomIndex == indexChosen[2] || randomIndex == indexChosen[3] || randomIndex == indexChosen[4] || randomIndex == indexChosen[5] || randomIndex == indexChosen[6]){
      //While the number we currently have to get does not become different from the previous used, we must continue calculating new indices.
       while (randomIndex == indexChosen[0] || randomIndex == indexChosen[1] || randomIndex == indexChosen[2] || randomIndex == indexChosen[3] || randomIndex == indexChosen[4] || randomIndex == indexChosen[5] || randomIndex == indexChosen[6]){
-        randomIndex = Math.floor(Math.random()*6); 
+        randomIndex = Math.floor(Math.random()*7); 
       }
       indexChosen.push(randomIndex); //Found a new index, store the numerical value inside the indexChosen (So it will not be used again later).
       chosenContinents.push(listContinents[randomIndex]); //Store the name of the continent in the chosenContinent options.
@@ -49,7 +49,7 @@ function optionsContinent(num){ //Parameter is the correct answer which later ha
 //MIXING POSSIBLE ANSWERS END
 
 //MIXING POSSIBLE ANSWERS START - COUNTRIES
-function optionCountries(num){
+function optionCountries(num2){
   let countries = ["Brazil","Peru","France","Australia","China","India","Egypt","Turkey","UK","USA","Italy","Iran","Spain"]; //Array with all the countries
   let chosenCountries = []; //Array that will contain the correct answer, plus the 3 wrong answers
   let numberChosen = new Set(); //This set will avoid that the same country appears on the round.
@@ -85,7 +85,7 @@ function optionCountries(num){
 //MIXING POSSIBLE ANSWERS END - COUNTRIES
 
 //MIXING POSSIBLE ANSWERS START - CITIES
-function optionCities(num){
+function optionCities(num3){
 let cities = ["Rio de Janeiro","Cusco","Paris","Sydney","Beijing","Agra","Cairo","Capadocia","London","New York","Rome","Salisbury","Tehran","Valencia"]; //Array of cities
 let chosenCities = []; //Array that will contain the correct answer, plus the 3 wrong answers
 let numberChosen = new Set(); //This set will avoid that the same city appears on the round.
