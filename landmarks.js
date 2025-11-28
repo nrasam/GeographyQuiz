@@ -192,90 +192,259 @@ export const ASIAN_CITIES = [
   "Jerusalem", // Israel
 ];
 
-
 //VALUE FOR EACH IMG START
 /*All images have been given a value which will have to go inside the fuctions on (utils.js).
 The number of continent/country/city is the corresponding index of their position in the array */
-const images={
-  "photos/agra.avif":{
+export const images = {
+  "photos/agra.avif": {
     continent: 3,
     country: 5,
-    city: 5
+    city: 5,
   },
-  "photo/Beijing.jpeg":{
+  "photo/Beijing.jpeg": {
     continent: 3,
     country: 4,
-    city: 4
+    city: 4,
   },
-  "photo/cairo.jpeg":{
+  "photo/cairo.jpeg": {
     continent: 6,
     country: 6,
-    city: 6
+    city: 6,
   },
-  "photo/capadocia.avif":{
+  "photo/capadocia.avif": {
     continent: 3,
     country: 7,
-    city: 7
+    city: 7,
   },
-  "photo/london.jpeg":{
+  "photo/london.jpeg": {
     continent: 2,
     country: 8,
-    city:8
+    city: 8,
   },
-  "photo/london2.avif":{
+  "photo/london2.avif": {
     continent: 2,
     country: 8,
-    city:8
+    city: 8,
   },
-  "photo/MachuPicchu.jpeg":{
+  "photo/MachuPicchu.jpeg": {
     continent: 1,
     country: 1,
-    city: 1
+    city: 1,
   },
-  "photo/newyork.jpeg":{
+  "photo/newyork.jpeg": {
     continent: 0,
     country: 9,
-    city: 9
+    city: 9,
   },
-  "photo/paris.jpeg":{
+  "photo/paris.jpeg": {
     continent: 2,
     country: 2,
-    city: 2
+    city: 2,
   },
-  "photo/paris2.avif":{
+  "photo/paris2.avif": {
     continent: 2,
     country: 2,
-    city: 2
+    city: 2,
   },
-  "photo/riodejaneiro.jpeg":{
+  "photo/riodejaneiro.jpeg": {
     continent: 1,
     country: 0,
-    city: 0
+    city: 0,
   },
-  "photo/rome.jpeg":{
+  "photo/rome.jpeg": {
     continent: 2,
     country: 10,
-    city: 10
+    city: 10,
   },
-  "photo/salisbury.avif":{
+  "photo/salisbury.avif": {
     continent: 2,
     country: 8,
-    city: 11
+    city: 11,
   },
-  "photo/sydney.jpeg":{
+  "photo/sydney.jpeg": {
     continent: 4,
     country: 3,
-    city: 3
+    city: 3,
   },
-  "photo/tehran.avif":{
+  "photo/tehran.avif": {
     continent: 3,
     country: 11,
-    city: 12
+    city: 12,
   },
-  "photo/valencia.avif":{
+  "photo/valencia.avif": {
     continent: 2,
     country: 12,
-    city: 13
-  }
-}
-//VALUE FOR EACH IMG END
+    city: 13,
+  },
+};
+
+export const GEOGRAPHY_DATA = {
+  Africa: {
+    Egypt: [
+      "Cairo",
+      "Alexandria",
+      "Giza",
+      "Luxor",
+      "Aswan",
+      "Port Said",
+      "Suez",
+      "Mansoura",
+      "Tanta",
+      "Ismailia",
+    ],
+  },
+  Asia: {
+    China: [
+      "Beijing",
+      "Shanghai",
+      "Chongqing",
+      "Guangzhou",
+      "Shenzhen",
+      "Tianjin",
+      "Wuhan",
+      "Chengdu",
+      "Xi'an",
+      "Hangzhou",
+    ],
+    India: [
+      "Delhi",
+      "Mumbai",
+      "Bangalore",
+      "Hyderabad",
+      "Chennai",
+      "Kolkata",
+      "Pune",
+      "Jaipur",
+      "Surat",
+      "Agra",
+    ],
+    Iran: [
+      "Tehran",
+      "Mashhad",
+      "Isfahan",
+      "Karaj",
+      "Shiraz",
+      "Tabriz",
+      "Qom",
+      "Ahvaz",
+      "Kermanshah",
+      "Yazd",
+    ],
+    Turkey: [
+      "Istanbul",
+      "Ankara",
+      "Izmir",
+      "Bursa",
+      "Antalya",
+      "Konya",
+      "Adana",
+      "Gaziantep",
+      "Sanliurfa",
+      "Kayseri",
+    ],
+  },
+  Europe: {
+    France: [
+      "Paris",
+      "Marseille",
+      "Lyon",
+      "Toulouse",
+      "Nice",
+      "Nantes",
+      "Strasbourg",
+      "Montpellier",
+      "Bordeaux",
+      "Lille",
+    ],
+    Italy: [
+      "Rome",
+      "Milan",
+      "Naples",
+      "Turin",
+      "Palermo",
+      "Genoa",
+      "Bologna",
+      "Florence",
+      "Bari",
+      "Catania",
+    ],
+    Spain: [
+      "Madrid",
+      "Barcelona",
+      "Valencia",
+      "Seville",
+      "Zaragoza",
+      "Malaga",
+      "Murcia",
+      "Palma de Mallorca",
+      "Bilbao",
+      "Alicante",
+    ],
+    UK: [
+      "London",
+      "Birmingham",
+      "Manchester",
+      "Glasgow",
+      "Liverpool",
+      "Leeds",
+      "Sheffield",
+      "Edinburgh",
+      "Bristol",
+      "Nottingham",
+    ],
+  },
+  "North America": {
+    USA: [
+      "New York",
+      "Los Angeles",
+      "Chicago",
+      "Houston",
+      "Phoenix",
+      "Philadelphia",
+      "San Antonio",
+      "San Diego",
+      "Dallas",
+      "San Jose",
+    ],
+  },
+  "South America": {
+    Brazil: [
+      "São Paulo",
+      "Rio de Janeiro",
+      "Brasília",
+      "Salvador",
+      "Fortaleza",
+      "Belo Horizonte",
+      "Manaus",
+      "Curitiba",
+      "Recife",
+      "Porto Alegre",
+    ],
+    Peru: [
+      "Lima",
+      "Arequipa",
+      "Trujillo",
+      "Chiclayo",
+      "Piura",
+      "Iquitos",
+      "Cusco",
+      "Huancayo",
+      "Tacna",
+      "Callao",
+    ],
+  },
+  Australia: {
+    Australia: [
+      "Sydney",
+      "Melbourne",
+      "Brisbane",
+      "Perth",
+      "Adelaide",
+      "Gold Coast",
+      "Canberra",
+      "Newcastle",
+      "Wollongong",
+      "Hobart",
+    ],
+  },
+};

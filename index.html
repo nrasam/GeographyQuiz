@@ -6,28 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script type="module" src="script.js" defer></script>
-    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="old_styles.css"> -->
 </head>
 
 <body>
-    <div>
-        <p>Score: <strong id="score">0</strong></p>
-        <p id="currentLandmark">Landmark 1 of 10</p>
-        <button id="newLandmark">New Landmark</button>
+    <div class="pearlescentBackground"></div>
+    <div id="startScreen">
+        <h1 id="startScreenTitle">Geography Quiz</h1>
+        <button id="startButton">Press any key to start</button>
     </div>
-    <h1>Geography Quiz</h1>
-    <div id="game">
-        <p>Identify the continent, country, and city of famous landmarks!</p>
-        <img id="locationImg" src="./photos/london.jpeg" alt="random location to guess" width="500" height="500">
-        <p>Identify this landmark!</p>
-        <br>
-        <button id="option1" class="multipleChoiceOption">A. Europe</button>
-        <button id="option2" class="multipleChoiceOption">B. Africa</button>
-        <button id="option3" class="multipleChoiceOption">C. Asia</button>
-        <button id="option4" class="multipleChoiceOption">D. North America</button>
+    <div id="quizContainer" style="display: none;">
+        <div>
+            <p>Score: <strong id="score">0</strong></p>
+            <p id="currentLandmark">Landmark 1 of 10</p>
+            <button id="newLandmark">New Landmark</button>
+        </div>
+        <h1>Geography Quiz</h1>
+        <div id="game">
+            <p>Identify the continent, country, and city of famous landmarks!</p>
+            <div class="image-container">
+
+                <img id="locationImg" src="./photos/london.jpeg" alt="random location to guess" width="500"
+                    height="500">
+                <h2 class="overlay-text">Identify this landmark!</h2>
+            </div>
+            <br>
+            <button id="option1" class="multipleChoiceOption">A. Europe</button>
+            <button id="option2" class="multipleChoiceOption">B. Africa</button>
+            <button id="option3" class="multipleChoiceOption">C. Asia</button>
+            <button id="option4" class="multipleChoiceOption">D. North America</button>
+        </div>
+        <div id="gameOver">
+            <h1>Game Over!</h1>
+        </div>
     </div>
-    <div id="gameOver">
-        <h1>Game Over!</h1>
+    <div style="position:absolute; width:1px; height:1px; overflow:hidden;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1" height="1">
+            <filter id="pearlescent" x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox">
+                <feTurbulence type="turbulence" baseFrequency="0.012" numOctaves="5" seed="7" result="noise" />
+                <feTile in="noise" result="tiledNoise" />
+                <feDisplacementMap in="SourceGraphic" in2="tiledNoise" scale="25" xChannelSelector="R"
+                    yChannelSelector="G" />
+            </filter>
+        </svg>
     </div>
 </body>
 
