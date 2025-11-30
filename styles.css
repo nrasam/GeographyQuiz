@@ -1,5 +1,14 @@
 body {
+  overflow: auto;
   color: #0b3d91;
+}
+
+#side-by-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  height: 50vh;
 }
 
 div {
@@ -143,8 +152,8 @@ body {
 
 #locationImg {
   border-radius: 20px;
-  width: 500px;
-  height: 500px;
+  width: 450px;
+  height: 450px;
   mask-image: radial-gradient(circle, black 70%, transparent 100%);
   -webkit-mask-image: radial-gradient(circle, black 70%, transparent 100%);
 }

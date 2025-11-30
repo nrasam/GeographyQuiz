@@ -1,11 +1,30 @@
-Members:
-Member 1: 
-    Novell Rasam
-    218281873
-Member 2:
-
-Member 3:
+Member Name   | Student ID
+--------------|------------
+Novell Rasam  | 218281873
+Tiziano Amici |
+Lifeng Zheng  | 222454201
 
 Problems/Challenges We Encountered:
+- Creating the data model
+    - It was at first confusing how to structure the data model, as we had to store question, continent, country and city info.
+    - And we needed to make sure countries were under continents, and the right cities were under the right countries.
+    - Ultimately we went with an hierarchical dictionary.
+- Making sure the mc options were random everytime, but always included the right answer.
+    - This required a bit of creative problem solving.
+    - We needed to implement a couple helper functions to help us shuffle and randomly insert the correct answer.
+- (Not) implementing a server side last minute.
+    - Implementing everything on the client side was time-consuming enough that we ran out of time to integrate it with a backend server.
+    - Frankly we only noticed this was a requirement last minute.
+    - If we knew a head of time, we might have implemented a backend simultaneously with the client side.
+- Overall organizing the game logic/loop
+    - Organizing the game logic and making sure everything worked as expected was no easy task.
+    - It took a bunch of trial and error to reach the end result.
+- Screen getting cut off for some users resulting in the mc options not displaying.
+    - Originally we had the answers under the question, but this resulted for some users in the mc options being cut off.
+    - We tried adding a scroll bar but it wouldn't work.
+    - So we put the image and mc options side by side instead.
 
 Changes from requirements:
+    1. No sound effects.
+    2. Doesn't look exactly like wireframe.
+    3. More barebones game over screen.
