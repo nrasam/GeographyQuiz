@@ -1,0 +1,23 @@
+{
+  "name": "geographyquiz",
+  "version": "1.0.0",
+  "description": "Final Project for Intro to Computing at York University.",
+  "main": "landmarks.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nrasam/GeographyQuiz.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nrasam/GeographyQuiz/issues"
+  },
+  "homepage": "https://github.com/nrasam/GeographyQuiz#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
