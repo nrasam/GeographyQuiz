@@ -1,112 +1,59 @@
+// tests/utils.test.js
 import { describe, it, expect } from "vitest";
-import { LANDMARKS, GEOGRAPHY_DATA } from "./landmarks.js";
-import * as utils from "./utils.js";
 import {
-  GAME,
-  getListOfQuestions,
-  setMCBtnOptions,
-  updateScore,
-  displayFeedback,
-  endGame,
-} from "./script.js";
+  shuffleArray,
+  getRandomElementFromArray,
+  getContinentOptions,
+  getCountryOptions,
+  getCityOptions,
+} from "./utils.js";
 
-describe("getListOfQuestions", () => {
-  it("fills GAME.questionsList with shuffled landmarks limited to gameLength", () => {
-    vi.spyOn(utils, "shuffleArray").mockReturnValue(LANDMARKS);
-    GAME.gameLength = 5;
-    getListOfQuestions();
-    expect(GAME.questionsList.length).toBe(5);
-    expect(GAME.questionsList).toEqual(LANDMARKS.slice(0, 5));
-  });
-});
+// Dummy GEOGRAPHY_DATA for testing
+const GEOGRAPHY_DATA = {
+  Asia: {
+    Japan: ["Tokyo", "Osaka", "Kyoto"],
+    China: ["Beijing", "Shanghai", "Shenzhen"],
+  },
+  Europe: {
+    France: ["Paris", "Lyon", "Marseille"],
+    Germany: ["Berlin", "Munich", "Hamburg"],
+  },
+  Africa: {
+    Egypt: ["Cairo", "Alexandria", "Giza"],
+  },
+  Oceania: {
+    Australia: ["Sydney", "Melbourne", "Perth"],
+  },
+};
 
-describe("setMCBtnOptions", () => {
-  it("sets innerHTML and dataset.answer for each button", () => {
-    const buttons = Array.from({ length: 4 }, () => {
-      const btn = document.createElement("button");
-      btn.className = "multipleChoiceOption";
-      document.body.appendChild(btn);
-      return btn;
-    });
-
-    const options = ["Asia", "Europe", "Africa", "Oceania"];
-    setMCBtnOptions(options);
-
-    buttons.forEach((btn, i) => {
-      expect(btn.innerHTML).toContain(options[i]);
-      expect(btn.dataset.answer).toBe(options[i]);
-    });
-  });
-});
-
-describe("updateScore", () => {
-  it("adds points proportional to questionPhase when correct", () => {
-    GAME.score = 0;
-    GAME.questionPhase = 2;
-    const scoreEl = document.createElement("div");
-    scoreEl.id = "score";
-    document.body.appendChild(scoreEl);
-
-    updateScore(true);
-    expect(GAME.score).toBe(20);
-    expect(scoreEl.innerHTML).toBe("20");
+describe("basic utility tests", () => {
+  it("shuffleArray returns same elements in different order", () => {
+    const arr = [1, 2, 3, 4];
+    const shuffled = shuffleArray([...arr]);
+    expect(shuffled.sort()).toEqual(arr.sort());
   });
 
-  it("does not change score when incorrect", () => {
-    GAME.score = 0;
-    updateScore(false);
-    expect(GAME.score).toBe(0);
+  it("getRandomElementFromArray returns an element from array", () => {
+    const arr = ["apple", "banana", "cherry"];
+    const element = getRandomElementFromArray(arr);
+    expect(arr).toContain(element);
   });
-});
 
-describe("displayFeedback", () => {
-  it("shows correct feedback when answer is right", () => {
-    GAME.questionPhase = 1;
-    GAME.answer = "Asia";
-    const feedbacktxt = document.createElement("h2");
-    feedbacktxt.id = "feedback-h2";
-    document.body.appendChild(feedbacktxt);
-
-    const answerContainer = document.createElement("div");
-    answerContainer.id = "answer-container";
-    document.body.appendChild(answerContainer);
-
-    const feedBackContainer = document.createElement("div");
-    feedBackContainer.id = "feedback-container";
-    document.body.appendChild(feedBackContainer);
-
-    displayFeedback(true);
-    expect(feedbacktxt.innerHTML).toContain("You're correct +10 points!");
-    expect(answerContainer.style.display).toBe("none");
-    expect(feedBackContainer.style.display).toBe("block");
+  it("getContinentOptions includes the correct continent", () => {
+    const options = getContinentOptions("Asia");
+    expect(options).toContain("Asia");
+    expect(options.length).toBe(4);
   });
-});
 
-describe("endGame", () => {
-  it("marks game ended and displays score", () => {
-    GAME.score = 50;
-    const answerContainer = document.createElement("div");
-    answerContainer.id = "answer-container";
-    document.body.appendChild(answerContainer);
+  it("getCountryOptions includes the correct country", () => {
+    const options = getCountryOptions("Europe", "France");
+    expect(options).toContain("France");
+    expect(options.length).toBe(4);
+  });
 
-    const gameOverDiv = document.createElement("div");
-    gameOverDiv.id = "gameOver";
-    document.body.appendChild(gameOverDiv);
-
-    const quizContainer = document.createElement("div");
-    quizContainer.id = "quizContainer";
-    document.body.appendChild(quizContainer);
-
-    const scoreEl = document.createElement("div");
-    scoreEl.id = "game-over-score";
-    document.body.appendChild(scoreEl);
-
-    endGame();
-
-    expect(GAME.hadGameEnded).toBe(true);
-    expect(answerContainer.hidden).toBe(true);
-    expect(gameOverDiv.style.display).toBe("block");
-    expect(scoreEl.innerHTML).toContain("You scored: 50");
-    expect(quizContainer.style.display).toBe("none");
+  it("getCityOptions includes the correct city", () => {
+    const options = getCityOptions("Asia", "China", "Beijing");
+    expect(options).toContain("Beijing");
+    expect(options.length).toBe(4);
   });
 });

@@ -61,7 +61,7 @@ document.addEventListener("mousemove", (e) => {
 
 /**
  * Get initial list of quiz questions
- * # of questions depends on game length
+ * num of questions depends on game length
  */
 function getListOfQuestions() {
   let listOfQuestions = utils.shuffleArray(LANDMARKS);
