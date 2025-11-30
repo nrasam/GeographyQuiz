@@ -19,26 +19,29 @@
         <div>
             <p>Score: <strong id="score">0</strong></p>
             <p id="currentLandmark">Landmark 1 of 10</p>
-            <button id="newLandmark">New Landmark</button>
+            <!-- <button id="newLandmark">New Landmark</button> -->
         </div>
         <h1>Geography Quiz</h1>
-        <div id="game">
-            <p>Identify the continent, country, and city of famous landmarks!</p>
-            <div class="image-container">
-
-                <img id="locationImg" src="./photos/london.jpeg" alt="random location to guess" width="500"
-                    height="500">
-                <h2 class="overlay-text">Identify this landmark!</h2>
-            </div>
+        <p>Identify the continent, country, and city of famous landmarks!</p>
+        <div class="image-container">
+            <img id="locationImg" src="./photos/london.jpeg" alt="random location to guess" width="500" height="500">
+        </div>
+        <div id="answer-container">
+            <h2 id="level">Level 1: Continent</h2>
+            <h3 id="prompt" class="overlay-text">Which continent is this landmark located in?</h3>
             <br>
-            <button id="option1" class="multipleChoiceOption">A. Europe</button>
-            <button id="option2" class="multipleChoiceOption">B. Africa</button>
-            <button id="option3" class="multipleChoiceOption">C. Asia</button>
-            <button id="option4" class="multipleChoiceOption">D. North America</button>
+            <button id="option1" class="multipleChoiceOption" data-answer="">A. Europe</button>
+            <button id="option2" class="multipleChoiceOption" data-answer="">B. Africa</button>
+            <button id="option3" class="multipleChoiceOption" data-answer="">C. Asia</button>
+            <button id="option4" class="multipleChoiceOption" data-answer="">D. North America</button>
         </div>
-        <div id="gameOver">
-            <h1>Game Over!</h1>
+        <div id="feedback-container">
+            <h2 id="feedback-h2">Correct or incorrect who knows</h2>
         </div>
+    </div>
+    <div id="gameOver">
+        <h1>Game Over!</h1>
+        <h2 id="game-over-score">You scored: </h2>
     </div>
     <div style="position:absolute; width:1px; height:1px; overflow:hidden;">
         <svg xmlns="http://www.w3.org/2000/svg" width="1" height="1">

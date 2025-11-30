@@ -30,7 +30,7 @@ export const LANDMARKS = [
   {
     name: "Sydney Opera House",
     img: "photos/sydney.jpeg",
-    continent: "Australia",
+    continent: "Oceania",
     country: "Australia",
     city: "Sydney",
   },
@@ -113,171 +113,6 @@ export const LANDMARKS = [
   },
 ];
 
-export const CONTINENTS = [
-  "Africa",
-  "Antarctica",
-  "Asia",
-  "Europe",
-  "North America",
-  "South America",
-  "Australia",
-];
-
-export const AFRICAN_COUNTRIES = [
-  "Nigeria",
-  "Egypt",
-  "South Africa",
-  "Kenya",
-  "Ghana",
-  "Ethiopia",
-  "Morocco",
-  "Senegal",
-  "Uganda",
-  "Tanzania",
-  "Algeria",
-  "Angola",
-  "Zimbabwe",
-  "Rwanda",
-  "Namibia",
-  "Mozambique",
-  "Sudan",
-  "Botswana",
-  "Côte d’Ivoire",
-  "Tunisia",
-];
-
-export const AFRICAN_CITIES = [
-  "Lagos", // Nigeria
-  "Cairo", // Egypt
-  "Nairobi", // Kenya
-  "Johannesburg", // South Africa
-  "Accra", // Ghana
-  "Addis Ababa", // Ethiopia
-  "Casablanca", // Morocco
-  "Dakar", // Senegal
-  "Kampala", // Uganda
-  "Tunis", // Tunisia
-  "Windhoek", // Namibia
-  "Harare", // Zimbabwe
-  "Kigali", // Rwanda
-  "Luanda", // Angola
-  "Maputo", // Mozambique
-  "Algiers", // Algeria
-  "Khartoum", // Sudan
-  "Gaborone", // Botswana
-  "Abidjan", // Côte d’Ivoire
-  "Dar es Salaam", // Tanzania
-];
-
-export const ASIAN_CITIES = [
-  "Tokyo", // Japan
-  "Seoul", // South Korea
-  "Beijing", // China
-  "Shanghai", // China
-  "Bangkok", // Thailand
-  "Singapore", // Singapore
-  "Jakarta", // Indonesia
-  "Kuala Lumpur", // Malaysia
-  "Manila", // Philippines
-  "Hanoi", // Vietnam
-  "New Delhi", // India
-  "Mumbai", // India
-  "Islamabad", // Pakistan
-  "Dhaka", // Bangladesh
-  "Kathmandu", // Nepal
-  "Riyadh", // Saudi Arabia
-  "Dubai", // United Arab Emirates
-  "Tehran", // Iran
-  "Istanbul", // Turkey (partly in Asia)
-  "Jerusalem", // Israel
-];
-
-//VALUE FOR EACH IMG START
-/*All images have been given a value which will have to go inside the fuctions on (utils.js).
-The number of continent/country/city is the corresponding index of their position in the array */
-export const images = {
-  "photos/agra.avif": {
-    continent: 3,
-    country: 5,
-    city: 5,
-  },
-  "photo/Beijing.jpeg": {
-    continent: 3,
-    country: 4,
-    city: 4,
-  },
-  "photo/cairo.jpeg": {
-    continent: 6,
-    country: 6,
-    city: 6,
-  },
-  "photo/capadocia.avif": {
-    continent: 3,
-    country: 7,
-    city: 7,
-  },
-  "photo/london.jpeg": {
-    continent: 2,
-    country: 8,
-    city: 8,
-  },
-  "photo/london2.avif": {
-    continent: 2,
-    country: 8,
-    city: 8,
-  },
-  "photo/MachuPicchu.jpeg": {
-    continent: 1,
-    country: 1,
-    city: 1,
-  },
-  "photo/newyork.jpeg": {
-    continent: 0,
-    country: 9,
-    city: 9,
-  },
-  "photo/paris.jpeg": {
-    continent: 2,
-    country: 2,
-    city: 2,
-  },
-  "photo/paris2.avif": {
-    continent: 2,
-    country: 2,
-    city: 2,
-  },
-  "photo/riodejaneiro.jpeg": {
-    continent: 1,
-    country: 0,
-    city: 0,
-  },
-  "photo/rome.jpeg": {
-    continent: 2,
-    country: 10,
-    city: 10,
-  },
-  "photo/salisbury.avif": {
-    continent: 2,
-    country: 8,
-    city: 11,
-  },
-  "photo/sydney.jpeg": {
-    continent: 4,
-    country: 3,
-    city: 3,
-  },
-  "photo/tehran.avif": {
-    continent: 3,
-    country: 11,
-    city: 12,
-  },
-  "photo/valencia.avif": {
-    continent: 2,
-    country: 12,
-    city: 13,
-  },
-};
-
 export const GEOGRAPHY_DATA = {
   Africa: {
     Egypt: [
@@ -292,6 +127,15 @@ export const GEOGRAPHY_DATA = {
       "Tanta",
       "Ismailia",
     ],
+    Nigeria: [],
+    Kenya: [],
+    "South Africa": [],
+    Ghana: [],
+    Ethiopia: [],
+    Morocco: [],
+    Tanzania: [],
+    Uganda: [],
+    Senegal: [],
   },
   Asia: {
     China: [
@@ -406,6 +250,10 @@ export const GEOGRAPHY_DATA = {
       "Dallas",
       "San Jose",
     ],
+    Canada: [],
+    Mexico: [],
+    Cuba: [],
+    "Costa Rica": [],
   },
   "South America": {
     Brazil: [
@@ -432,8 +280,11 @@ export const GEOGRAPHY_DATA = {
       "Tacna",
       "Callao",
     ],
+    Argentina: [],
+    Chile: [],
+    Colombia: [],
   },
-  Australia: {
+  Oceania: {
     Australia: [
       "Sydney",
       "Melbourne",
@@ -446,5 +297,9 @@ export const GEOGRAPHY_DATA = {
       "Wollongong",
       "Hobart",
     ],
+    "Papua New Guinea": [],
+    "New Zealand": [],
+    Fiji: [],
+    Samoa: [],
   },
 };
